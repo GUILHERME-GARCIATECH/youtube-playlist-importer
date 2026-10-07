@@ -31,12 +31,20 @@ As credenciais estão no `.gitignore`. O script não salva tokens de acesso em d
 
 ## Lista de músicas
 
-O arquivo `musicas.example.json` traz duas músicas instrumentais de exemplo. Edite essa lista ou use outro arquivo com `--input`.
+O arquivo `musicas.example.json` traz dez músicas instrumentais de exemplo, com jazz contemporâneo, grooves e um toque de eletrônica. Edite essa lista ou use outro arquivo com `--input`.
 
 ```json
 [
   { "title": "xoxoxo", "artist": "corto.alto" },
-  { "title": "Hopopono", "artist": "GoGo Penguin" }
+  { "title": "Hopopono", "artist": "GoGo Penguin" },
+  { "title": "Raven", "artist": "GoGo Penguin" },
+  { "title": "Black Sails", "artist": "Mammal Hands" },
+  { "title": "Prickly Pear", "artist": "Portico Quartet" },
+  { "title": "Speaking Gently", "artist": "BADBADNOTGOOD" },
+  { "title": "Strings of Light", "artist": "Yussef Kamaal" },
+  { "title": "The Sun in September", "artist": "Matthew Halsall" },
+  { "title": "From Gagarin's Point of View", "artist": "Esbjörn Svensson Trio" },
+  { "title": "Says", "artist": "Nils Frahm" }
 ]
 ```
 
