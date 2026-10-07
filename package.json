@@ -2,11 +2,27 @@
     "name": "youtube-playlist-importer",
     "version": "1.0.0",
     "type": "module",
+    "description": "Importa uma lista de músicas JSON para uma playlist do YouTube.",
+    "private": true,
+    "license": "MIT",
+    "engines": {
+        "node": ">=22"
+    },
     "scripts": {
-        "start": "node index.js"
+        "start": "tsx src/index.ts",
+        "build": "tsc",
+        "start:prod": "node dist/index.js",
+        "typecheck": "tsc --noEmit",
+        "test": "tsx --test tests/*.test.ts",
+        "check": "npm run typecheck && npm test && npm run build"
     },
     "dependencies": {
         "@google-cloud/local-auth": "^3.0.1",
-        "googleapis": "^144.0.0"
+        "googleapis": "^184.0.0"
+    },
+    "devDependencies": {
+        "@types/node": "^22.0.0",
+        "tsx": "^4.0.0",
+        "typescript": "^5.0.0"
     }
 }
