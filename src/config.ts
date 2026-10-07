@@ -4,7 +4,7 @@ import type { Privacy } from "./types.js";
 
 export const HELP = `Uso: npm start -- [opções]
 
-  --input <arquivo>         Lista JSON (padrão: musicas.json)
+  --input <arquivo>         Lista JSON (padrão: musicas.example.json)
   --credentials <arquivo>   OAuth do Google (padrão: credentials.json)
   --title <nome>            Nome da nova playlist (padrão: soft)
   --description <texto>     Descrição da nova playlist
@@ -20,7 +20,7 @@ export function parseConfig(args: string[]) {
   const { values } = parseArgs({
     args,
     options: {
-      input: { type: "string", default: "musicas.json" },
+      input: { type: "string", default: "musicas.example.json" },
       credentials: { type: "string", default: "credentials.json" },
       title: { type: "string", default: "soft" },
       description: { type: "string", default: "Playlist importada automaticamente via script Node.js." },

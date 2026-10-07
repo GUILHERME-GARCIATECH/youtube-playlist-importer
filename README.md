@@ -31,12 +31,12 @@ As credenciais estão no `.gitignore`. O script não salva tokens de acesso em d
 
 ## Lista de músicas
 
-Edite `musicas.json`, que preserva sua lista original, ou use outro arquivo. Há uma lista pequena em `examples/musicas.json`.
+O arquivo `musicas.example.json` traz duas músicas instrumentais de exemplo. Edite essa lista ou use outro arquivo com `--input`.
 
 ```json
 [
-  { "title": "Sweet", "artist": "Cigarettes After Sex" },
-  { "title": "Sparks", "artist": "Coldplay" }
+  { "title": "xoxoxo", "artist": "corto.alto" },
+  { "title": "Hopopono", "artist": "GoGo Penguin" }
 ]
 ```
 
@@ -48,17 +48,17 @@ A entrada deve ser um array não vazio, com `title` e `artist` como textos não 
 npm start
 ```
 
-Por padrão, lê `musicas.json`, usa `credentials.json`, cria uma playlist **privada** chamada **soft** e espera 500 ms entre músicas. O terminal mostra o link da playlist e o progresso.
+Por padrão, lê `musicas.example.json`, usa `credentials.json`, cria uma playlist **privada** chamada **soft** e espera 500 ms entre músicas. O terminal mostra o link da playlist e o progresso.
 
 ```sh
-npm start -- --title "Minha playlist" --input examples/musicas.json
+npm start -- --title "Minha playlist" --input musicas.example.json
 npm start -- --title "Favoritas" --privacy unlisted --delay 1000
 npm start -- --help
 ```
 
 | Opção | Padrão | Descrição |
 | --- | --- | --- |
-| `--input` | `musicas.json` | Lista de músicas |
+| `--input` | `musicas.example.json` | Lista de músicas |
 | `--credentials` | `credentials.json` | Credenciais OAuth |
 | `--title` | `soft` | Título da nova playlist |
 | `--description` | `Playlist importada automaticamente via script Node.js.` | Descrição da nova playlist |
@@ -110,9 +110,8 @@ src/
   youtube.ts      Autenticação OAuth e chamadas à API
   importer.ts     Importação e tratamento de falhas individuais
   types.ts        Tipos compartilhados
-examples/         Lista mínima de exemplo
 tests/            Testes locais sem acesso à API
-musicas.json      Lista original
+musicas.example.json  Lista de exemplo com músicas instrumentais
 ```
 
 ## Solução de problemas

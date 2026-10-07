@@ -12,9 +12,11 @@ test('validates and trims song fields', () => {
   }
 });
 
-test('preserves the original list and accepts the example', async () => {
-  assert.equal((await readSongs('musicas.json')).length, 65);
-  assert.equal((await readSongs('examples/musicas.json')).length, 2);
+test('accepts the instrumental example list', async () => {
+  assert.deepEqual(await readSongs('musicas.example.json'), [
+    { title: 'xoxoxo', artist: 'corto.alto' },
+    { title: 'Hopopono', artist: 'GoGo Penguin' },
+  ]);
 });
 
 test('CLI defaults and overrides', () => {
@@ -38,7 +40,7 @@ test('rejects invalid options and destructive report paths', () => {
     ['--privacy', 'invalid'], ['--delay', '-1'], ['--delay', 'abc'],
     ['--delay', '0.5'], ['--title', ' '], ['--input', ''],
     ['--playlist-id', ''], ['--unknown'],
-    ['--failures', 'musicas.json'], ['--failures', './credentials.json'],
+    ['--failures', 'musicas.example.json'], ['--failures', './credentials.json'],
   ]) assert.throws(() => parseConfig(args));
 });
 
